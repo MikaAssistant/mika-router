@@ -7,15 +7,15 @@ const io = require('socket.io')(http);
 
 io.on('connection', function(socket){
     socket.on('nlp',function(msg){
-        console.log('nlp: '+ msg);
+        console.log('nlp: '+ msg+' <'+Date()+'>');
         socket.broadcast.emit('nlp',msg);
     });
     socket.on('kernel',function(msg){
-        console.log('kernel: '+ msg);
+        console.log('kernel: '+ msg+' <'+Date()+'>');
         socket.broadcast.emit('kernel',msg);
     });
     socket.on('client',function(msg){
-        console.log('client: '+ msg);
+        console.log('client: '+ msg+' <'+Date()+'>');
         socket.broadcast.emit('client',msg);
     });
 });
