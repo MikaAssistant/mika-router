@@ -10,13 +10,13 @@ io.on('connection', function(socket){
         console.log('nlp: '+ msg+' <'+Date()+'>');
         socket.broadcast.emit('nlp',msg);
     });
-    socket.on('kernel',function(msg){
-        console.log('kernel: '+ msg+' <'+Date()+'>');
-        socket.broadcast.emit('kernel',msg);
+    socket.on('kernel',function(response){
+        console.log('kernel: '+ response+' <'+Date()+'>');
+        socket.broadcast.emit('kernel',response);
     });
-    socket.on('client',function(msg){
-        console.log('client: '+ msg+' <'+Date()+'>');
-        socket.broadcast.emit('client',msg);
+    socket.on('client',function(response){
+        console.log('client: '+ response+' <'+Date()+'>');
+        socket.broadcast.emit('client',response);
     });
 });
 
