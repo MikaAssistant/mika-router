@@ -21,6 +21,11 @@ io.on('connection', function(socket){
         console.log(response);
         socket.broadcast.emit('client',response);
     });
+    socket.on('smarthome',function(response){
+        console.log('smarthome: <'+Date()+'>');
+        console.log(response);
+        socket.broadcast.emit('smarthome',response);
+    });
 });
 
 http.listen(env.HTTP_PORT, function(){
